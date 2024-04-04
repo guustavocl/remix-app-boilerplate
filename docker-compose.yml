@@ -1,0 +1,22 @@
+version: "3"
+services:
+  remix-app:
+    container_name: boilerplate
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      POSTHOG_API_KEY: ""
+    networks:
+      - npm
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: '2GB'
+networks:
+  npm:
+    external: true
+    name: npm

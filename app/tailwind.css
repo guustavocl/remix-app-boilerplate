@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+
+  /* COLORS */
+  :root {
+    /* ACCENT 
+    --accent-color: hsl(251, 85%, 56%);
+     */
+    --accent-color: 251 85% 56%;
+    /* LIGHT 
+    --light-background-color: hsl(0, 0%, 94%);
+    --light-foreground-color: hsl(0, 0%, 7%);
+    --light-primary-color: hsl(251, 85%, 56%);
+    --light-secondary-color: hsl(0, 0%, 18%);
+    --light-destructive-color: hsl(0, 100%, 33%);
+    --light-card-color: hsl(0, 0%, 91%);
+    --light-border-color: hsl(0, 0%, 94%);
+    --light-muted-color: hsl(0, 0%, 18%);
+    --light-muted-foreground-color: hsl(0, 0%, 94%);
+    */
+    --light-background-color: 0 0% 94%;
+    --light-foreground-color: 0 0% 7%;
+    --light-primary-color: 251 85% 56%;
+    --light-secondary-color: 0 0% 18%;
+    --light-destructive-color: 0 100% 33%;
+    --light-card-color: 0 0% 85%;
+    --light-border-color: 0 0% 94%;
+    --light-muted-color: 0 0% 65%;
+    --light-muted-foreground-color: 0 0% 60%;
+
+    /* DARK 
+    --dark-background-color: hsl(0, 0%, 7%);
+    --dark-foreground-color: hsl(0, 0%, 94%);
+    --dark-primary-color: hsl(251, 85%, 56%);
+    --dark-secondary-color: hsl(0, 0%, 18%);
+    --dark-destructive-color: hsl(0, 100%, 33%);
+    --dark-card-color: hsl(0, 0%, 12%);
+    --dark-border-color: hsl(0, 0%, 7%);
+    --dark-muted-color: hsl(0, 0%, 82%);
+    --dark-muted-foreground-color: hsl(0, 0%, 94%);
+    */
+    --dark-background-color: 0 0% 7%;
+    --dark-foreground-color: 0 0% 94%;
+    --dark-primary-color: 251 85% 56%;
+    --dark-secondary-color: 0 0% 18%;
+    --dark-destructive-color: 0 100% 33%;
+    --dark-card-color: 0 0% 12%;
+    --dark-border-color: 0 0% 7%;
+    --dark-muted-color: 0 0% 32%;
+    --dark-muted-foreground-color: 0 0% 60%;
+  }
+
+  :root {
+    --background: var(--light-background-color);
+    --foreground: var(--light-foreground-color);
+ 
+    --card: var(--light-card-color);
+    --card-foreground: var(--light-foreground-color);
+ 
+    --popover: var(--light-card-color);
+    --popover-foreground: var(--light-foreground-color);
+ 
+    --primary: var(--light-primary-color);
+    --primary-foreground: var(--light-background-color);
+ 
+    --secondary: var(--light-secondary-color);
+    --secondary-foreground: var(--light-background-color);
+ 
+    --muted: var(--light-muted-color);
+    --muted-foreground: var(--light-muted-foreground-color);
+ 
+    --accent: var(--accent-color);
+    --accent-foreground: var(--light-background-color);
+ 
+    --destructive: var(--light-destructive-color);
+    --destructive-foreground: var(--light-foreground-color);
+ 
+    --border: var(--light-border-color);
+    --input: var(--light-muted-color);
+    --ring: var(--accent-color);
+
+    --scrollbar-color: hsl(251, 85%, 56%);
+    --scrollbar-bg-color: hsl(0, 0%, 94%);
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: var(--dark-background-color);
+    --foreground: var(--dark-foreground-color);
+ 
+    --card: var(--dark-card-color);
+    --card-foreground: var(--dark-foreground-color);
+ 
+    --popover: var(--dark-card-color);
+    --popover-foreground: var(--dark-foreground-color);
+ 
+    --primary: var(--dark-primary-color);
+    --primary-foreground: var(--dark-background-color);
+ 
+    --secondary: var(--dark-secondary-color);
+    --secondary-foreground: var(--dark-foreground-color);
+ 
+    --muted: var(--dark-muted-color);
+    --muted-foreground: var(--dark-muted-foreground-color);
+ 
+    --accent: var(--accent-color);
+    --accent-foreground: var(--dark-foreground-color);
+ 
+    --destructive: var(--dark-destructive-color);
+    --destructive-foreground: var(--dark-foreground-color);
+ 
+    --border: var(--dark-border-color);
+    --input: var(--dark-muted-color);
+    --ring: var(--accent-color);
+
+    --scrollbar-color: hsl(251, 85%, 56%);
+    --scrollbar-bg-color: hsl(0, 0%, 7%);
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* 
+button:focus,
+a:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 0ch;
+  --tw-ring-offset-width: 0px !important;
+} */
+
+
+/* SCROLLBAR START */
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg-color);
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.5);
+  filter: 0 1;
+  opacity: 1;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  filter: 0 1;
+  opacity: 1;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg-color);
+  filter: 0 1;
+  opacity: 1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  /* border: 3px solid var(--scrollbar-bg-color); */
+  filter: 0 1;
+  opacity: 1;
+}
+
+body {
+  overscroll-behavior-y: none;
+  overflow-y: scroll;
+}
+
+/* SCROLLBAR END */
